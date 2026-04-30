@@ -1,0 +1,19 @@
+{
+  "username": "YOUR_OSU_USERNAME",
+  "osuApiKey": "YOUR_OSU_API_KEY",
+  "streamElementsToken": "YOUR_STREAMELEMENTS_JWT_TOKEN",
+  "channelId": "YOUR_STREAMELEMENTS_ACCOUNT_ID",
+  "commandName": "osu",
+  "pollInterval": 60000,
+  "display": {
+    "username": true,
+    "worldRank": true,
+    "nationalRank": true,
+    "pp": true,
+    "accuracy": true,
+    "level": false,
+    "playcount": false,
+    "grades": false,
+    "hoursPlayed": false
+  }
+}
