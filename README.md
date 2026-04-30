@@ -147,6 +147,21 @@ Cada estadística puede activarse o desactivarse de forma independiente desde la
 
 ---
 
+## Primer uso (después de clonar)
+
+Al abrir la app por primera vez las credenciales están vacías. Antes de iniciar el bot:
+
+1. Ir a la pestaña **⚙️ Configuración**.
+2. Rellenar **todos** los campos, incluyendo el **Nombre del comando** (ej: `osu`).  
+   ⚠️ Si el campo *Nombre del comando* queda vacío, el bot fallará con un error 400 al intentar crear el comando en StreamElements.
+3. Hacer clic en **💾 Guardar configuración**.
+4. Hacer clic en **🔌 Probar conexión** para verificar que las credenciales sean correctas.
+5. Recién entonces ir a la pestaña **🤖 Bot** y hacer clic en **▶ Iniciar**.
+
+> Si el bot muestra `HTTP 400 "command is not allowed to be empty"`, significa que el campo *Nombre del comando* estaba vacío al momento de guardar. Completarlo y guardar de nuevo resuelve el problema.
+
+---
+
 ## Seguridad
 
 - `config.json` está listado en `.gitignore` y nunca se subirá a un repositorio público.
