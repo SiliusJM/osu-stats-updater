@@ -146,6 +146,7 @@
     .field label { display: block; font-size: 11px; color: #666688; margin-bottom: 4px; font-weight: 500; }
     .field input[type="text"],
     .field input[type="number"],
+    .field input[type="password"],
     .field textarea {
       width: 100%;
       background: #09091a;
@@ -210,7 +211,8 @@
     .token-wrap {
       position: relative;
     }
-    .token-wrap textarea {
+    .token-wrap textarea,
+    .token-wrap input {
       padding-right: 36px;
     }
     .eye-btn {
@@ -342,7 +344,10 @@
       </div>
       <div class="field">
         <label>osu! API Key</label>
-        <input type="text" id="osuApiKey" placeholder="Tu clave de API de osu!">
+        <div class="token-wrap">
+          <input type="password" id="osuApiKey" placeholder="Tu clave de API de osu!">
+          <button class="eye-btn" id="btnEyeKey" title="Mostrar/ocultar clave" onclick="toggleApiKey()">🙈</button>
+        </div>
         <p class="hint">
           Entra a <em>osu.ppy.sh</em> → tu avatar (arriba a la derecha) → <em>Configuración</em> → baja hasta <em>API heredada</em> → clic en <em>Mostrar clave API</em>.<br>
           Si no tienes una, pon cualquier nombre de aplicación y como URL puedes usar <code>https://streamelements.com/dashboard/bot/commands/custom</code>.
@@ -461,6 +466,14 @@
       const el = document.getElementById('disp_' + f);
       if (el) el.checked = (d[f] !== false);
     });
+  }
+
+  function toggleApiKey() {
+    const inp = document.getElementById('osuApiKey');
+    const btn = document.getElementById('btnEyeKey');
+    const hide = inp.type === 'text';
+    inp.type = hide ? 'password' : 'text';
+    btn.textContent = hide ? '🙈' : '👁️';
   }
 
   function toggleToken() {

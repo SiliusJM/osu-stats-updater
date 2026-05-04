@@ -64,7 +64,7 @@ npm install
 1. Iniciar sesión en [StreamElements](https://streamelements.com).
 2. Hacer clic en el avatar (arriba a la derecha) → **Mi Cuenta** o **Channel settings**.
 3. Abrir la pestaña **Channels**.
-4. Copiar el **Account ID** de Twitch (ejemplo: `5edc06d994438f3f2a220c65`).
+4. Copiar el **Account ID** de Twitch (ejemplo: `5edc06d994438f3f2a2...`).
 5. Copiar el **JWT Token** de Twitch desde la misma pantalla.
 
 ### 4. Configurar la aplicación
