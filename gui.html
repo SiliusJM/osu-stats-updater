@@ -440,6 +440,7 @@
 
 <div class="toast" id="toast"></div>
 
+<script src="gui-log.js"></script>
 <script>
   const TEXT_FIELDS    = ['username', 'osuApiKey', 'channelId', 'streamElementsToken', 'commandName'];
   const DISPLAY_FIELDS = ['username', 'worldRank', 'nationalRank', 'pp', 'accuracy', 'level', 'playcount', 'grades', 'hoursPlayed'];
@@ -490,7 +491,7 @@
       if (el) cfg[f] = el.value.trim();
     });
     const secs = parseInt(document.getElementById('pollInterval').value, 10);
-    cfg.pollInterval = (isNaN(secs) || secs < 10 ? 60 : secs) * 1000;
+    cfg.pollInterval = (!Number.isFinite(secs) || secs < 10 || secs > 3600 ? 60 : secs) * 1000;
     cfg.display = {};
     DISPLAY_FIELDS.forEach(f => {
       const el = document.getElementById('disp_' + f);
@@ -533,7 +534,7 @@
     const p = document.createElement('p');
     p.className = 'l' + (type ? ' l-' + type : '');
     p.textContent = msg;
-    area.appendChild(p);
+    window.appendBoundedLog(area, p);
     area.scrollTop = area.scrollHeight;
   }
 
