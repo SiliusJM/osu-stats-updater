@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "bot":   "node index.js"
+    "bot":   "node index.js",
+    "test": "node --test"
   },
   "dependencies": {
     "axios": "^1.6.0",
